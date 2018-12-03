@@ -1,0 +1,45 @@
+server:
+  port: 8000
+spring:
+  profiles:
+    active: dev
+  ## notice :two springboot project deploy(部署）in same server
+  jmx:
+    default-domain: springbootEcharts
+  datasource:
+    name: test
+    #主数据源，默认配置
+    url: jdbc:mysql://127.0.0.1:3306/mytest?useSSL=false
+    username: root
+    password: root
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+  thymeleaf:
+    # 模板模式 LEGACYHTML5
+    mode: HTML5
+    # 这个开发配置为false，避免改了模板还要重启服务器
+    cache: false
+    # ######下面的这些可不用配置#######
+    # 这个是配置模板路径的，默认就是templates
+    prefix: classpath:/templates/
+    suffix: .html
+    encoding: UTF-8
+    content-type: text/html
+    # 检查模板位置
+    check-template-location: true
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.qiuxiujie.demo.model
+
+#pagehelper分页插件
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
+
+logging:
+  level:
+    com:
+      cnepay: trace
