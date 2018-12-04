@@ -3,6 +3,7 @@ package com.qiuxiujie.demo.controller;
 import com.qiuxiujie.demo.model.Movie;
 import com.qiuxiujie.demo.service.ISiteInfoService;
 import com.qiuxiujie.demo.service.MovieService;
+import com.qiuxiujie.demo.service.impl.DataImportServiceImpl;
 import com.qiuxiujie.demo.service.impl.MovieServiceImpl;
 import com.qiuxiujie.demo.util.ResultObjStr;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,8 @@ public class TestController {
     private MovieServiceImpl movieService;
     @Autowired
     private ISiteInfoService siteInfoService;
+    @Autowired
+    private DataImportServiceImpl dataImportService;
     @RequestMapping("/test")
     public String test(Model model){
         Movie mv = movieService.testMybatis();
@@ -32,6 +35,16 @@ public class TestController {
     public String importExcel (@RequestParam("file") MultipartFile file, Integer myid) {
         try {
             return siteInfoService.importExcel(file, myid).toJson();
+        } catch (Exception e) {
+            //logger.error("上传excel后台错误 : " + e.getMessage());
+            return new ResultObjStr(ResultObjStr.ERROR, "后台错误", null).toJson();
+        }
+    }
+    @ResponseBody
+    @PostMapping(value = "/data")
+    public String importData (@RequestParam("file") MultipartFile file, Integer myid) {
+        try {
+            return dataImportService.importExcel(file, myid).toJson();
         } catch (Exception e) {
             //logger.error("上传excel后台错误 : " + e.getMessage());
             return new ResultObjStr(ResultObjStr.ERROR, "后台错误", null).toJson();

@@ -1,9 +1,9 @@
-package main.java.com.qiuxiujie.demo.model;
+package com.qiuxiujie.demo.model;
 
-public class Data {
+public class Datas {
     private Integer id;
 
-    private String type;
+    private String types;
 
     private String brand;
 
@@ -43,11 +43,11 @@ public class Data {
 
     private Integer rom;
 
-    private Integer flash;
+    private Double flash;
 
     private Integer camera;
 
-    private Integer position;
+    private Integer positions;
 
     private Integer fm;
 
@@ -79,12 +79,12 @@ public class Data {
         this.id = id;
     }
 
-    public String getType() {
-        return type;
+    public String getTypes() {
+        return types;
     }
 
-    public void setType(String type) {
-        this.type = type == null ? null : type.trim();
+    public void setTypes(String types) {
+        this.types = types == null ? null : types.trim();
     }
 
     public String getBrand() {
@@ -239,11 +239,11 @@ public class Data {
         this.rom = rom;
     }
 
-    public Integer getFlash() {
+    public Double getFlash() {
         return flash;
     }
 
-    public void setFlash(Integer flash) {
+    public void setFlash(Double flash) {
         this.flash = flash;
     }
 
@@ -255,12 +255,12 @@ public class Data {
         this.camera = camera;
     }
 
-    public Integer getPosition() {
-        return position;
+    public Integer getPositions() {
+        return positions;
     }
 
-    public void setPosition(Integer position) {
-        this.position = position;
+    public void setPositions(Integer positions) {
+        this.positions = positions;
     }
 
     public Integer getFm() {

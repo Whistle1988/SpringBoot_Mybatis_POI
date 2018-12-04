@@ -1,17 +1,22 @@
-package main.java.com.qiuxiujie.demo.dao;
+package com.qiuxiujie.demo.dao;
 
-import main.java.com.qiuxiujie.demo.model.Data;
+import com.qiuxiujie.demo.model.Datas;
+
+import java.util.List;
+import java.util.Map;
 
 public interface DataMapper {
-    int deleteByPrimaryKey(Integer id);
+//    int deleteByPrimaryKey(Integer id);
+//
+//    int insert(Datas record);
+//
+//    int insertSelective(Datas record);
+//
+//    Datas selectByPrimaryKey(Integer id);
+//
+//    int updateByPrimaryKeySelective(Datas record);
+//
+//    int updateByPrimaryKey(Datas record);
 
-    int insert(Data record);
-
-    int insertSelective(Data record);
-
-    Data selectByPrimaryKey(Integer id);
-
-    int updateByPrimaryKeySelective(Data record);
-
-    int updateByPrimaryKey(Data record);
+    Integer addMultSiteInfo(List<Map<String, Object>> list);
 }

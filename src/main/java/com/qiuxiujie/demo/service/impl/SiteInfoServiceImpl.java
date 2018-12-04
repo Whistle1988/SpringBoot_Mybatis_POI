@@ -54,7 +54,9 @@ public class SiteInfoServiceImpl implements ISiteInfoService {
 
 				}
 				excelsMap.add(map);
+				//System.out.println(map);
 			}
+
 			this.siteInfoDao.addMultSiteInfo(excelsMap);
 			return new ResultObjStr(ResultObjStr.SUCCESS, "上传成功", null); 
 		} catch (IOException e) {

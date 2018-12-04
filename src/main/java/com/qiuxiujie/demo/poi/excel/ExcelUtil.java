@@ -19,7 +19,7 @@ public class ExcelUtil {
 	private static Logger logger = LoggerFactory.getLogger(ExcelUtil.class);
 	
 	public static void main(String[] args) throws Exception {
-		InputStream inp = new FileInputStream("/Users/didi/Documents/data_warehouse/test1.xls");
+		InputStream inp = new FileInputStream("/Users/didi/Documents/data_warehouse/data1.xlsx");
 		List<List<Object>> excels = readExcel(inp);
 		for (List<Object> rows : excels) {
 			for (Object cell : rows) {
